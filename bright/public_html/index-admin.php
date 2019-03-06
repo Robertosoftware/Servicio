@@ -58,6 +58,7 @@
         <li><a href="#!Asesor">Asesor</a></li>
         <li><a href="#!Alumno">Alumno</a></li>
         <li><a href="#!Password">Cambiar password de asesores</a></li>
+        <li><a href="#!Clave">Cambiar clave de registro</a></li>
         <li class="dropdown-header">Tablas Complementarias</li>
         <li><a href="#!Categoria">Categoría</a></li>
         <li><a href="#!Materia">Materia</a></li>

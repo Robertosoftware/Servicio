@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
--- https://www.phpmyadmin.net/
+-- version 4.5.4.1deb2ubuntu2.1
+-- http://www.phpmyadmin.net
 --
--- Servidor: localhost:3306
--- Tiempo de generación: 06-03-2019 a las 03:02:59
--- Versión del servidor: 10.3.13-MariaDB
--- Versión de PHP: 7.3.2
+-- Servidor: localhost
+-- Tiempo de generación: 06-03-2019 a las 00:11:34
+-- Versión del servidor: 5.7.25-0ubuntu0.16.04.2
+-- Versión de PHP: 7.0.33-0ubuntu0.16.04.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -31,8 +29,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `alumno` (
   `idalumno` int(11) NOT NULL,
   `nombre_alumno` varchar(100) DEFAULT NULL,
-  `edad` int(20) DEFAULT NULL,
-  `fecha_registro` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `edad` varchar(20) DEFAULT NULL,
+  `fecha_registro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `nombre_responsable` varchar(100) DEFAULT NULL,
   `celular_responsable` varchar(25) DEFAULT NULL,
   `correo_responsable` varchar(45) DEFAULT NULL,
@@ -46,107 +44,122 @@ CREATE TABLE `alumno` (
 --
 
 INSERT INTO `alumno` (`idalumno`, `nombre_alumno`, `edad`, `fecha_registro`, `nombre_responsable`, `celular_responsable`, `correo_responsable`, `direccion`, `parentesco_responsable`, `idasesor`) VALUES
-(8, 'Martin Garcia Rocha', 25, '2019-02-11 23:04:59', 'Rodrigo Hano', '23334213', 'robe@gmail.com', 'Mansiones del valle #18', 'Padre', 2),
-(9, 'Gustavo Perez Rangel', 22, '2019-02-11 23:05:09', 'Gustavo Pérez Ramírez', '4423780146', 'robe@gmail.com', 'Boulevard Anáhuac, Paseo de las Palmas', 'Padre', 2),
-(10, 'Roberto Bonilla Ibarra', 12, '2019-02-11 22:56:51', 'Marisa Ibarra Rubio', '4423780146', 'robertodgb@gmail.com', 'Mansiones del valle #18, Querétaro, Hacienda de Guadalupe', 'Madre', 2),
-(11, 'Omar Reyes Martinez', 22, '2019-02-11 23:47:24', 'Rodrigo Hano', '2535626778', 'rto@gmail.com', 'Condesa Venezuela 23', 'Padre', 2),
-(12, 'Gerardo Bonilla Rubio', 12, '2019-02-13 17:12:05', 'Roberto Bonilla Ibarra', '4427890251', 'roberto.bonilla@gmail.com', 'Lomas de las Palmas, Lomas Anáhuac', 'Abuelo', 2),
-(15, 'Santiago Arguelles Cetto', 0, '2019-02-17 00:00:00', 'Angelica Cetto', '5543467199', 'cettoarguelles@gmail.com', 'Bosques de las Lomas', 'Desconocido', 2),
-(16, 'Daniela Arguelles Cetto', 0, '2019-02-17 00:00:00', 'Angelica Cetto', '5543467199', 'cettoarguelles@gmail.com', 'Bosques de las Lomas', 'Desconocido', 2),
-(17, 'Rodrigo Ramos', 0, '2019-02-17 00:00:00', 'Carmen Valles', '5554081141', 'cvalles123@hotmail.com', '', 'Desconocido', 2),
-(18, 'Eimy Escaba', 0, '2019-02-17 00:00:00', 'Nancy Escaba', '5554043076', ' ', 'Bosque Real', 'Desconocido', 2),
-(20, 'Pamela Guerra', 0, '2019-02-17 00:00:00', 'Gaby Cassanova', '5545226950', 'tobias1771@hotmail.com', 'Lomas de Chapultepec', 'Desconocido', 2),
-(21, 'Fernanda Guerra', 0, '2019-02-17 00:00:00', 'Gaby Cassanova', '5545226950', 'tobias1771@hotmail.com', 'Lomas de Chapultepec', 'Desconocido', 2),
-(22, 'Ana Paula Pizzuto', 0, '2019-02-17 00:00:00', 'Blanca Pizzuto', '5551028246', '', 'Bosques de las Lomas', 'Desconocido', 2),
-(23, 'Jeronimo Iparraguirre', 0, '2019-02-17 00:00:00', 'Monica Iparraguirre', '5513537838', 'lamonis@hotmail.com', 'Vistahermosa', 'Desconocido', 2),
-(24, 'Valentina Gonzalez Gracida', 0, '2019-02-17 00:00:00', 'Ingrid Gonzalez', '5554038281', 'becerraingrid@hotmail.com', 'Bosques de las Lomas', 'Desconocido', 2),
-(25, 'Macarena Leon Rivas', 0, '2019-02-17 00:00:00', 'Viviana Rivas', '5534095327', '', 'Bosques de las Lomas', 'Desconocido', 2),
-(26, 'Juan Pablo Leon Rivas', 0, '2019-02-17 00:00:00', 'Viviana Rivas', '5534095327', '', 'Bosques de las Lomas', 'Desconocido', 2),
-(27, 'Roberto Dominguez', 0, '2019-02-17 00:00:00', 'Susana Testas', '5516338101', '', 'Interlomas ', 'Desconocido', 2),
-(28, 'Silvia Hernandez Lopez', 0, '2019-02-17 00:00:00', 'Silvia Lopez', '5555010229', 'silopez1804@gmail.com', 'Bosques de las Lomas', 'Desconocido', 2),
-(31, 'Isabella Agraz', 0, '2019-02-17 00:00:00', 'Manena Mendoza', '5551017757', '', 'Interlomas ', 'Desconocido', 2),
-(35, 'Regina Rueda', 0, '2019-02-17 00:00:00', 'Erika Diaz', '5532211933', 'erikadiazrios@hotmail.com', 'Vistahermosa', 'Desconocido', 2),
-(36, 'Domenica Castro', 0, '2019-02-17 00:00:00', 'Adriana Castro', '5552163246', '', 'Bosques de las Lomas', 'Desconocido', 2),
-(38, 'Sofia Pliego', 0, '2019-02-17 00:00:00', 'Vanessa Pliego ', '5519517500', 'vanepliego@hotmail.com', 'Lomas de Bezares', 'Desconocido', 2),
-(39, 'Lucia Pliego', 0, '2019-02-17 00:00:00', 'Vanessa Pliego ', '5519517500', 'vanepliego@hotmail.com', 'Lomas de Bezares', 'Desconocido', 2),
-(40, 'Andrea Espino Zepeda', 0, '2019-02-17 00:00:00', 'Marlene de la Garza', '5518776922', '', 'Lomas de Chapultepec', 'Desconocido', 2),
-(41, 'Dalia Abadi Saadia', 0, '2019-02-17 00:00:00', 'Esther Saadia', '5551058546', 'esthersaadia@hotmail.com', 'Bosques de las Lomas', 'Desconocido', 2),
-(42, 'Ana Belen Fernandez', 0, '2019-02-17 00:00:00', 'Carina Flores', '5532238503', '', 'Bosques de las Lomas', 'Desconocido', 2),
-(45, 'Alfonso Albarran Macias', 0, '2019-02-17 00:00:00', 'Aurora Albarran', '5517576569', '', 'Interlomas ', 'Desconocido', 2),
-(46, 'Ander March', 0, '2019-02-17 00:00:00', 'Mayalen  Dunand', '5518320471', '', 'Bosques de las Lomas', 'Desconocido', 2),
-(47, 'Imanol Dunand', 0, '2019-02-17 00:00:00', 'Fatima Dunand', '5523008996', '', 'Santa Fe', 'Desconocido', 2),
-(48, 'Valentina Fernandez', 0, '2019-02-17 00:00:00', 'Laura Fernandez', '5527377739', '', 'La Herradura', 'Desconocido', 2),
-(49, 'Ricardo Fernandez', 0, '2019-02-17 00:00:00', 'Laura Fernandez ', '5527377739', '', 'La Herradura', 'Desconocido', 2),
-(50, 'Elba Maria Cruz', 0, '2019-02-17 00:00:00', 'Elba Maria Cruz', '5544426095', '', 'Lomas de Chapultepec', 'Desconocido', 2),
-(51, 'Juani Sundbland', 0, '2019-02-17 00:00:00', 'Cecilia Sunbland', '5567924417', 'sundbladcecilia@gmail.com', 'Interlomas ', 'Desconocido', 2),
-(52, 'Alejo Ibarra ', 0, '2019-02-17 00:00:00', 'Xochitl Gonzalez', '5554075169', 'ibarra.die@gmail.com', 'Santa Fe', 'Desconocido', 2),
-(53, 'Mariana Garza', 0, '2019-02-17 00:00:00', 'Susana Garcia', '5548777390', '', 'Bosques de las Lomas', 'Desconocido', 2),
-(54, 'Daniela Sesin', 0, '2019-02-17 00:00:00', 'Maria del Carmen Kanan', '7717091002', '', 'Bosques de las Lomas', 'Desconocido', 2),
-(55, 'Valeria Alvarez Murphy', 0, '2019-02-17 00:00:00', 'Victoria Espinosa', '5559090379', '', 'Santa Fe', 'Desconocido', 2),
-(56, 'Patricio Perez', 0, '2019-02-17 00:00:00', 'Patricio Perez ', '5536486866', '', 'Interlomas ', 'Desconocido', 2),
-(57, 'Iker Morales', 0, '2019-02-17 00:00:00', 'Maite Morales', '5554141297', '', 'Interlomas ', 'Desconocido', 2),
-(58, 'Alyn Becharano', 0, '2019-02-17 00:00:00', 'Alyn Becharano', '5547330251', '', 'Bosques de las Lomas', 'Desconocido', 2),
-(61, 'Maria Jose Romo', 0, '2019-02-17 00:00:00', 'Maria Jose Romo', '5532246876', '', 'Santa Fe', 'Desconocido', 2),
-(62, 'Natalia Ramirez', 0, '2019-02-17 00:00:00', 'Marise Rodirguez', '5518506634', 'mariserodrigueza@icloud.com', 'Santa Fe', 'Desconocido', 2),
-(63, 'Valentina Ramirez', 0, '2019-02-17 00:00:00', 'Marise Rodirguez', '5518506634', 'mariserodrigueza@icloud.com', 'Santa Fe', 'Desconocido', 2),
-(64, 'Isabella Ramirez', 0, '2019-02-17 00:00:00', 'Marise Rodirguez', '5518506634', 'mariserodrigueza@icloud.com', 'Santa Fe', 'Desconocido', 2),
-(65, 'Renzo Negrete Elizondo', 0, '2019-02-17 00:00:00', 'Anabel Elizondo', '7135043039', '', 'Bosques de las Lomas', 'Desconocido', 2),
-(66, 'Isabella Falzoni', 0, '2019-02-17 00:00:00', 'Natasha Falzoni', '5544475966', '', 'Bosques de las Lomas', 'Desconocido', 2),
-(67, 'Alessandro Falzoni', 0, '2019-02-17 00:00:00', 'Natasha Falzoni', '5544475966', '', 'Bosques de las Lomas', 'Desconocido', 2),
-(68, 'Jose Andres Morales', 0, '2019-02-17 00:00:00', 'Ana Paola Di Dona', '5554385166', '', 'Bosques de las Lomas', 'Desconocido', 2),
-(69, 'Sara Neme', 0, '2019-02-17 00:00:00', 'Laura Neme', '5543603706', 'lauoli99@gmail.com', 'Bosque Real', 'Desconocido', 2),
-(70, 'Charo Vilchis', 0, '2019-02-17 00:00:00', 'Charo Vilchis', '5591996634', '', 'Bosques de las Lomas', 'Desconocido', 2),
-(71, 'Valentina Quintana', 0, '2019-02-17 00:00:00', 'Paola Quintana', '5514740366', '', 'Lomas de Chapultepec', 'Desconocido', 2),
-(72, 'Nicolas Quintana', 0, '2019-02-17 00:00:00', 'Paola Quintana', '5514740366', '', 'Lomas de Chapultepec', 'Desconocido', 2),
-(73, 'Patricio Paquentin', 0, '2019-02-17 00:00:00', 'Alejandra Agraz', '5543466441', '', '', 'Desconocido', 2),
-(74, 'Sofia Vives Mosquera', 0, '2019-02-17 00:00:00', 'Olga Mosquera', '5712129476', 'olguim@hotmail.com', 'Bosques de las Lomas', 'Desconocido', 2),
-(75, 'Marcos Troncan Waizel ', 0, '2019-02-17 00:00:00', 'Sara Waizel', '5514514295', 'sarawa9@yahoo.com.mx', 'Interlomas', 'Desconocido', 2),
-(76, 'Nicolas Vives Mosquera', 0, '2019-02-17 00:00:00', 'Olga Mosquera', '5712129476', 'olguim@hotmail.com', 'Bosques de las Lomas', 'Desconocido', 2),
-(77, 'Sebstian Uribe Murillo', 0, '2019-02-17 00:00:00', 'Gabriela Murillo', '5527281854', '', 'Bosques de las Lomas', 'Desconocido', 2),
-(78, 'Andres Uribe Murillo', 0, '2019-02-17 00:00:00', 'Gabriela Murillo', '5527281854', '', 'Bosques de las Lomas', 'Desconocido', 2),
-(79, 'Vale Ferreira', 0, '2019-02-17 00:00:00', 'Sandra Gonzalez', '5543839927', '', 'Bosques de las Lomas', 'Desconocido', 2),
-(80, 'Ximena Duclaud Cervantes', 0, '2019-02-17 00:00:00', 'Gaby Cervantes', '5554028095', '', 'Bosques de las Lomas', 'Desconocido', 2),
-(81, 'Natalia Jimenez Fernandez', 0, '2019-02-17 00:00:00', 'Luisa Fernandez Jimenez', '5526902837', '', 'Interlomas', 'Desconocido', 2),
-(82, 'Natalia Islas Rossel', 0, '2019-02-17 00:00:00', 'Yalinne Rossell', '5543603340', '', 'Santa Fe', 'Desconocido', 2),
-(83, 'Paula Islas Rossel', 0, '2019-02-17 00:00:00', 'Yalinne Rossell', '5543603340', '', 'Santa Fe', 'Desconocido', 2),
-(84, 'Johanna Kuri Sayeg', 0, '2019-02-17 00:00:00', 'Isabel Sayeg Kuri', '5554129232', 'isayeg64@yahoo.com', 'Lomas de Chapultepec', 'Desconocido', 2),
-(86, 'Rafael Aldrete Ramirez', 0, '2019-02-17 00:00:00', 'Maga Ramirez', '5536606830', '', 'Cuajimalpa', 'Desconocido', 2),
-(87, 'Danika Arrieta  Davalos', 0, '2019-02-17 00:00:00', 'Karla Davalos', '5514510023', 'karladavalos@tupperware.com', 'Santa Fe', 'Desconocido', 2),
-(88, 'Fernanda Balmaseda', 0, '2019-02-17 00:00:00', 'Gloria Olivera', '5554122544', '', 'Lomas de Tecamachalco', 'Desconocido', 2),
-(89, 'Alberto Balmaseda', 0, '2019-02-17 00:00:00', 'Gloria Olivera', '5554122544', '', 'Lomas de Tecamachalco', 'Desconocido', 2),
-(91, 'Camila Salvo Coppel', 0, '2019-02-17 00:00:00', ' Paulina Salvo', '5525360942', 'paucoppel@gmail.com', 'Santa Fe', 'Desconocido', 2),
-(92, 'Teresa Gomez', 0, '2019-02-17 00:00:00', 'Teresa Gomez', '5528559873', '', 'Santa Fe', 'Desconocido', 2),
-(93, 'Andres Salles- beres Escalante', 0, '2019-02-17 00:00:00', 'Ana Escalante', '5541440418', '', 'Cuajimalpa', 'Desconocido', 2),
-(94, 'Michelle Padilla', 0, '2019-02-17 00:00:00', 'Eleandra Dos Santos', '5527552271', '', 'Bosques de las Lomas', 'Desconocido', 2),
-(95, 'Valeria Duarte', 0, '2019-02-17 00:00:00', 'Velia Duarte', '5541435156', '', 'Jesus del Monte', 'Desconocido', 2),
-(96, 'Regina Hernandez', 0, '2019-02-17 00:00:00', 'Giovanna Hernandez', '5545446796', '', 'Vistahermosa', 'Desconocido', 2),
-(97, 'Daniel Tache', 0, '2019-02-17 00:00:00', 'Daniel Tache', '5552523722', '', 'Interlomas', 'Desconocido', 2),
-(98, 'Santiago Sanchez Orozco', 0, '2019-02-17 00:00:00', 'Vero Orozco', '5521094420', '', 'Santa Fe', 'Desconocido', 2),
-(99, 'Catalina Organista Martelo', 0, '2019-02-17 00:00:00', 'Patricia Martelo', '5544512234', '', 'Interlomas', 'Desconocido', 2),
-(100, 'Emilia Fadl Aguilar', 0, '2019-02-17 00:00:00', 'Alejandra Aguilar ', '5545253747', 'aleaguilars01@gmail.com', 'Bosque Real', 'Desconocido', 2),
-(101, 'Alejandra  Zepeda de la Garza', 0, '2019-02-17 00:00:00', 'Marlene de la Garza', '5518776922', '', 'Lomas de Chapultepec', 'Desconocido', 2),
-(102, 'Alfredo Osuna', 0, '2019-02-17 00:00:00', 'Diana Osuna', '5515317640', 'alfredo@tdsmex.com', 'Condesa', 'Desconocido', 2),
-(103, 'Alberto Kibrit', 0, '2019-02-17 00:00:00', 'Alberto Kibrit', '5551072402', 'albertokm16@gmail.com', '', 'Desconocido', 2),
-(104, 'Paola Di llano', 0, '2019-02-17 00:00:00', 'Paola Di llano', '5537313349', '', 'Lomas de Tecamachalco', 'Desconocido', 2),
-(105, 'Patricia  Zepeda Carranza', 0, '2019-02-17 00:00:00', 'Paty Zepeda', '5554186420', 'jassocpa@yahoo.com', 'Interlomas', 'Desconocido', 2),
-(106, 'Paula Zepeda Carranza', 0, '2019-02-17 00:00:00', 'Paty Zepeda', '5554186420', 'jassocpa@yahoo.com', 'Interlomas', 'Desconocido', 2),
-(107, 'Diego Barreto Yibrin', 0, '2019-02-17 00:00:00', 'Ana Caro Ybrin', '', 'ayibrin11@hotmail.com', 'Jesus del Monte', 'Desconocido', 2),
-(108, 'Gustavo Sanchez', 0, '2019-02-17 00:00:00', 'Mari Sanchez', '', '', 'Lomas de Chapultepec', 'Desconocido', 2),
-(109, 'Betty Romano', 0, '2019-02-17 00:00:00', 'Betty Romano', '', '', '', 'Desconocido', 2),
-(110, 'Joseph Nager', 0, '2019-02-17 00:00:00', 'Yemy Nagar', '', '', '', 'Desconocido', 2),
-(111, 'Marusa Bobadilla', 0, '2019-02-17 00:00:00', 'Marusa Bobadilla', '', '', '', 'Desconocido', 2),
-(113, 'Diego Alcocer Sancliment', 0, '2019-02-17 00:00:00', 'Montse Sancliment', '', '', '', 'Desconocido', 2),
-(115, 'Lucas Ortega Arambari', 0, '2019-02-17 00:00:00', 'Rosario Ortega', '', 'ortegaparamo.rocio@gmail.com', '', 'Desconocido', 2),
-(116, 'Regina Reguero', 0, '2019-02-17 00:00:00', 'Regina Reguero', '', '', '', 'Desconocido', 2),
-(117, 'Gonzalo Avila', 0, '2019-02-17 00:00:00', 'Shiamara Avila', '', '', '', 'Desconocido', 2),
-(118, 'Pamela Arcos', 0, '2019-02-17 00:00:00', 'Pamela Arcos', '', 'pamemam@hotmail.es', '', 'Desconocido', 2),
-(119, 'Jose Ignacio del Valle', 0, '2019-02-17 00:00:00', 'Lupina del Valle', '', '', '', 'Desconocido', 2),
-(121, 'Rodrigo Tirado', 0, '2019-02-17 00:00:00', 'Morella Tirado', '', '', '', 'Desconocido', 2),
-(123, 'Mayela Rigada', 0, '2019-02-17 00:00:00', 'Mayela Rigada', '', '', 'Interlomas', 'Desconocido', 2),
-(124, 'Arturo Hoth', 0, '2019-02-17 00:00:00', 'Graziela Hoth', '', '', '', 'Desconocido', 2),
-(126, 'Aitana Ituarte', 0, '2019-02-17 00:00:00', 'Adita Ituarte', '', '', '', 'Desconocido', 2),
+(8, 'Martin Garcia Rocha', '25', '2019-02-11 23:04:59', 'Rodrigo Hano', '23334213', 'robe@gmail.com', 'Mansiones del valle #18', 'Padre', 2),
+(10, 'Roberto Bonilla Ibarra', '12', '2019-02-11 22:56:51', 'Marisa Ibarra Rubio', '4423780146', 'robertodgb@gmail.com', 'Mansiones del valle #18, Querétaro, Hacienda de Guadalupe', 'Madre', 2),
+(11, 'Omar Reyes Martine', '22', '2019-03-06 04:22:47', 'Rodrigo Hano', '2535626778', 'rto@gmail.com', 'Condesa Venezuela 23', 'Padre', 2),
+(12, 'Gerardo Bonilla Rubio', '12', '2019-02-13 17:12:05', 'Roberto Bonilla Ibarra', '4427890251', 'roberto.bonilla@gmail.com', 'Lomas de las Palmas, Lomas Anáhuac', 'Abuelo', 2),
+(15, 'Santiago Arguelles Cetto', '0', '2019-02-17 00:00:00', 'Angelica Cetto', '5543467199', 'cettoarguelles@gmail.com', 'Bosques de las Lomas', 'Desconocido', 2),
+(16, 'Daniela Arguelles Cetto', '0', '2019-02-17 00:00:00', 'Angelica Cetto', '5543467199', 'cettoarguelles@gmail.com', 'Bosques de las Lomas', 'Desconocido', 2),
+(17, 'Rodrigo Ramos', '0', '2019-02-17 00:00:00', 'Carmen Valles', '5554081141', 'cvalles123@hotmail.com', '', 'Desconocido', 2),
+(18, 'Eimy Escaba', '0', '2019-02-17 00:00:00', 'Nancy Escaba', '5554043076', ' ', 'Bosque Real', 'Desconocido', 2),
+(20, 'Pamela Guerra', '0', '2019-02-17 00:00:00', 'Gaby Cassanova', '5545226950', 'tobias1771@hotmail.com', 'Lomas de Chapultepec', 'Desconocido', 2),
+(21, 'Fernanda Guerra', '0', '2019-02-17 00:00:00', 'Gaby Cassanova', '5545226950', 'tobias1771@hotmail.com', 'Lomas de Chapultepec', 'Desconocido', 2),
+(22, 'Ana Paula Pizzuto', '0', '2019-02-17 00:00:00', 'Blanca Pizzuto', '5551028246', '', 'Bosques de las Lomas', 'Desconocido', 2),
+(23, 'Jeronimo Iparraguirre', '0', '2019-02-17 00:00:00', 'Monica Iparraguirre', '5513537838', 'lamonis@hotmail.com', 'Vistahermosa', 'Desconocido', 2),
+(24, 'Valentina Gonzalez Gracida', '0', '2019-02-17 00:00:00', 'Ingrid Gonzalez', '5554038281', 'becerraingrid@hotmail.com', 'Bosques de las Lomas', 'Desconocido', 2),
+(25, 'Macarena Leon Rivas', '0', '2019-02-17 00:00:00', 'Viviana Rivas', '5534095327', '', 'Bosques de las Lomas', 'Desconocido', 2),
+(26, 'Juan Pablo Leon Rivas', '0', '2019-02-17 00:00:00', 'Viviana Rivas', '5534095327', '', 'Bosques de las Lomas', 'Desconocido', 2),
+(27, 'Roberto Dominguez', '0', '2019-02-17 00:00:00', 'Susana Testas', '5516338101', '', 'Interlomas ', 'Desconocido', 2),
+(28, 'Silvia Hernandez Lopez', '0', '2019-02-17 00:00:00', 'Silvia Lopez', '5555010229', 'silopez1804@gmail.com', 'Bosques de las Lomas', 'Desconocido', 2),
+(31, 'Isabella Agraz', '0', '2019-02-17 00:00:00', 'Manena Mendoza', '5551017757', '', 'Interlomas ', 'Desconocido', 2),
+(35, 'Regina Rueda', '0', '2019-02-17 00:00:00', 'Erika Diaz', '5532211933', 'erikadiazrios@hotmail.com', 'Vistahermosa', 'Desconocido', 2),
+(36, 'Domenica Castro', '0', '2019-02-17 00:00:00', 'Adriana Castro', '5552163246', '', 'Bosques de las Lomas', 'Desconocido', 2),
+(38, 'Sofia Pliego', '0', '2019-02-17 00:00:00', 'Vanessa Pliego ', '5519517500', 'vanepliego@hotmail.com', 'Lomas de Bezares', 'Desconocido', 2),
+(39, 'Lucia Pliego', '0', '2019-02-17 00:00:00', 'Vanessa Pliego ', '5519517500', 'vanepliego@hotmail.com', 'Lomas de Bezares', 'Desconocido', 2),
+(40, 'Andrea Espino Zepeda', '0', '2019-02-17 00:00:00', 'Marlene de la Garza', '5518776922', '', 'Lomas de Chapultepec', 'Desconocido', 2),
+(41, 'Dalia Abadi Saadia', '0', '2019-02-17 00:00:00', 'Esther Saadia', '5551058546', 'esthersaadia@hotmail.com', 'Bosques de las Lomas', 'Desconocido', 2),
+(42, 'Ana Belen Fernandez', '0', '2019-02-17 00:00:00', 'Carina Flores', '5532238503', '', 'Bosques de las Lomas', 'Desconocido', 2),
+(45, 'Alfonso Albarran Macias', '0', '2019-02-17 00:00:00', 'Aurora Albarran', '5517576569', '', 'Interlomas ', 'Desconocido', 2),
+(46, 'Ander March', '0', '2019-02-17 00:00:00', 'Mayalen  Dunand', '5518320471', '', 'Bosques de las Lomas', 'Desconocido', 2),
+(47, 'Imanol Dunand', '0', '2019-02-17 00:00:00', 'Fatima Dunand', '5523008996', '', 'Santa Fe', 'Desconocido', 2),
+(48, 'Valentina Fernandez', '0', '2019-02-17 00:00:00', 'Laura Fernandez', '5527377739', '', 'La Herradura', 'Desconocido', 2),
+(49, 'Ricardo Fernandez', '0', '2019-02-17 00:00:00', 'Laura Fernandez ', '5527377739', '', 'La Herradura', 'Desconocido', 2),
+(50, 'Elba Maria Cruz', '0', '2019-02-17 00:00:00', 'Elba Maria Cruz', '5544426095', '', 'Lomas de Chapultepec', 'Desconocido', 2),
+(51, 'Juani Sundbland', '0', '2019-02-17 00:00:00', 'Cecilia Sunbland', '5567924417', 'sundbladcecilia@gmail.com', 'Interlomas ', 'Desconocido', 2),
+(52, 'Alejo Ibarra ', '0', '2019-02-17 00:00:00', 'Xochitl Gonzalez', '5554075169', 'ibarra.die@gmail.com', 'Santa Fe', 'Desconocido', 2),
+(53, 'Mariana Garza', '0', '2019-02-17 00:00:00', 'Susana Garcia', '5548777390', '', 'Bosques de las Lomas', 'Desconocido', 2),
+(54, 'Daniela Sesin', '0', '2019-02-17 00:00:00', 'Maria del Carmen Kanan', '7717091002', '', 'Bosques de las Lomas', 'Desconocido', 2),
+(55, 'Valeria Alvarez Murphy', '0', '2019-02-17 00:00:00', 'Victoria Espinosa', '5559090379', '', 'Santa Fe', 'Desconocido', 2),
+(56, 'Patricio Perez', '0', '2019-02-17 00:00:00', 'Patricio Perez ', '5536486866', '', 'Interlomas ', 'Desconocido', 2),
+(57, 'Iker Morales', '0', '2019-02-17 00:00:00', 'Maite Morales', '5554141297', '', 'Interlomas ', 'Desconocido', 2),
+(58, 'Alyn Becharano', '0', '2019-02-17 00:00:00', 'Alyn Becharano', '5547330251', '', 'Bosques de las Lomas', 'Desconocido', 2),
+(61, 'Maria Jose Romo', '0', '2019-02-17 00:00:00', 'Maria Jose Romo', '5532246876', '', 'Santa Fe', 'Desconocido', 2),
+(62, 'Natalia Ramirez', '0', '2019-02-17 00:00:00', 'Marise Rodirguez', '5518506634', 'mariserodrigueza@icloud.com', 'Santa Fe', 'Desconocido', 2),
+(63, 'Valentina Ramirez', '0', '2019-02-17 00:00:00', 'Marise Rodirguez', '5518506634', 'mariserodrigueza@icloud.com', 'Santa Fe', 'Desconocido', 2),
+(64, 'Isabella Ramirez', '0', '2019-02-17 00:00:00', 'Marise Rodirguez', '5518506634', 'mariserodrigueza@icloud.com', 'Santa Fe', 'Desconocido', 2),
+(65, 'Renzo Negrete Elizondo', '0', '2019-02-17 00:00:00', 'Anabel Elizondo', '7135043039', '', 'Bosques de las Lomas', 'Desconocido', 2),
+(66, 'Isabella Falzoni', '0', '2019-02-17 00:00:00', 'Natasha Falzoni', '5544475966', '', 'Bosques de las Lomas', 'Desconocido', 2),
+(67, 'Alessandro Falzoni', '0', '2019-02-17 00:00:00', 'Natasha Falzoni', '5544475966', '', 'Bosques de las Lomas', 'Desconocido', 2),
+(68, 'Jose Andres Morales', '0', '2019-02-17 00:00:00', 'Ana Paola Di Dona', '5554385166', '', 'Bosques de las Lomas', 'Desconocido', 2),
+(69, 'Sara Neme', '0', '2019-02-17 00:00:00', 'Laura Neme', '5543603706', 'lauoli99@gmail.com', 'Bosque Real', 'Desconocido', 2),
+(70, 'Charo Vilchis', '0', '2019-02-17 00:00:00', 'Charo Vilchis', '5591996634', '', 'Bosques de las Lomas', 'Desconocido', 2),
+(71, 'Valentina Quintana', '0', '2019-02-17 00:00:00', 'Paola Quintana', '5514740366', '', 'Lomas de Chapultepec', 'Desconocido', 2),
+(72, 'Nicolas Quintana', '0', '2019-02-17 00:00:00', 'Paola Quintana', '5514740366', '', 'Lomas de Chapultepec', 'Desconocido', 2),
+(73, 'Patricio Paquentin', '0', '2019-02-17 00:00:00', 'Alejandra Agraz', '5543466441', '', '', 'Desconocido', 2),
+(74, 'Sofia Vives Mosquera', '0', '2019-02-17 00:00:00', 'Olga Mosquera', '5712129476', 'olguim@hotmail.com', 'Bosques de las Lomas', 'Desconocido', 2),
+(75, 'Marcos Troncan Waizel ', '0', '2019-02-17 00:00:00', 'Sara Waizel', '5514514295', 'sarawa9@yahoo.com.mx', 'Interlomas', 'Desconocido', 2),
+(76, 'Nicolas Vives Mosquera', '0', '2019-02-17 00:00:00', 'Olga Mosquera', '5712129476', 'olguim@hotmail.com', 'Bosques de las Lomas', 'Desconocido', 2),
+(77, 'Sebstian Uribe Murillo', '0', '2019-02-17 00:00:00', 'Gabriela Murillo', '5527281854', '', 'Bosques de las Lomas', 'Desconocido', 2),
+(78, 'Andres Uribe Murillo', '0', '2019-02-17 00:00:00', 'Gabriela Murillo', '5527281854', '', 'Bosques de las Lomas', 'Desconocido', 2),
+(79, 'Vale Ferreira', '0', '2019-02-17 00:00:00', 'Sandra Gonzalez', '5543839927', '', 'Bosques de las Lomas', 'Desconocido', 2),
+(80, 'Ximena Duclaud Cervantes', '0', '2019-02-17 00:00:00', 'Gaby Cervantes', '5554028095', '', 'Bosques de las Lomas', 'Desconocido', 2),
+(81, 'Natalia Jimenez Fernandez', '0', '2019-02-17 00:00:00', 'Luisa Fernandez Jimenez', '5526902837', '', 'Interlomas', 'Desconocido', 2),
+(82, 'Natalia Islas Rossel', '0', '2019-02-17 00:00:00', 'Yalinne Rossell', '5543603340', '', 'Santa Fe', 'Desconocido', 2),
+(83, 'Paula Islas Rossel', '0', '2019-02-17 00:00:00', 'Yalinne Rossell', '5543603340', '', 'Santa Fe', 'Desconocido', 2),
+(84, 'Johanna Kuri Sayeg', '0', '2019-02-17 00:00:00', 'Isabel Sayeg Kuri', '5554129232', 'isayeg64@yahoo.com', 'Lomas de Chapultepec', 'Desconocido', 2),
+(86, 'Rafael Aldrete Ramirez', '0', '2019-02-17 00:00:00', 'Maga Ramirez', '5536606830', '', 'Cuajimalpa', 'Desconocido', 2),
+(87, 'Danika Arrieta  Davalos', '0', '2019-02-17 00:00:00', 'Karla Davalos', '5514510023', 'karladavalos@tupperware.com', 'Santa Fe', 'Desconocido', 2),
+(88, 'Fernanda Balmaseda', '0', '2019-02-17 00:00:00', 'Gloria Olivera', '5554122544', '', 'Lomas de Tecamachalco', 'Desconocido', 2),
+(89, 'Alberto Balmaseda', '0', '2019-02-17 00:00:00', 'Gloria Olivera', '5554122544', '', 'Lomas de Tecamachalco', 'Desconocido', 2),
+(91, 'Camila Salvo Coppel', '0', '2019-02-17 00:00:00', ' Paulina Salvo', '5525360942', 'paucoppel@gmail.com', 'Santa Fe', 'Desconocido', 2),
+(92, 'Teresa Gomez', '0', '2019-02-17 00:00:00', 'Teresa Gomez', '5528559873', '', 'Santa Fe', 'Desconocido', 2),
+(93, 'Andres Salles- beres Escalante', '0', '2019-02-17 00:00:00', 'Ana Escalante', '5541440418', '', 'Cuajimalpa', 'Desconocido', 2),
+(94, 'Michelle Padilla', '0', '2019-02-17 00:00:00', 'Eleandra Dos Santos', '5527552271', '', 'Bosques de las Lomas', 'Desconocido', 2),
+(95, 'Valeria Duarte', '0', '2019-02-17 00:00:00', 'Velia Duarte', '5541435156', '', 'Jesus del Monte', 'Desconocido', 2),
+(96, 'Regina Hernandez', '0', '2019-02-17 00:00:00', 'Giovanna Hernandez', '5545446796', '', 'Vistahermosa', 'Desconocido', 2),
+(97, 'Daniel Tache', '0', '2019-02-17 00:00:00', 'Daniel Tache', '5552523722', '', 'Interlomas', 'Desconocido', 2),
+(98, 'Santiago Sanchez Orozco', '0', '2019-02-17 00:00:00', 'Vero Orozco', '5521094420', '', 'Santa Fe', 'Desconocido', 2),
+(99, 'Catalina Organista Martelo', '0', '2019-02-17 00:00:00', 'Patricia Martelo', '5544512234', '', 'Interlomas', 'Desconocido', 2),
+(100, 'Emilia Fadl Aguilar', '0', '2019-02-17 00:00:00', 'Alejandra Aguilar ', '5545253747', 'aleaguilars01@gmail.com', 'Bosque Real', 'Desconocido', 2),
+(101, 'Alejandra  Zepeda de la Garza', '0', '2019-02-17 00:00:00', 'Marlene de la Garza', '5518776922', '', 'Lomas de Chapultepec', 'Desconocido', 2),
+(102, 'Alfredo Osuna', '0', '2019-02-17 00:00:00', 'Diana Osuna', '5515317640', 'alfredo@tdsmex.com', 'Condesa', 'Desconocido', 2),
+(103, 'Alberto Kibrit', '0', '2019-02-17 00:00:00', 'Alberto Kibrit', '5551072402', 'albertokm16@gmail.com', '', 'Desconocido', 2),
+(104, 'Paola Di llano', '0', '2019-02-17 00:00:00', 'Paola Di llano', '5537313349', '', 'Lomas de Tecamachalco', 'Desconocido', 2),
+(105, 'Patricia  Zepeda Carranza', '0', '2019-02-17 00:00:00', 'Paty Zepeda', '5554186420', 'jassocpa@yahoo.com', 'Interlomas', 'Desconocido', 2),
+(106, 'Paula Zepeda Carranza', '0', '2019-02-17 00:00:00', 'Paty Zepeda', '5554186420', 'jassocpa@yahoo.com', 'Interlomas', 'Desconocido', 2),
+(107, 'Diego Barreto Yibrin', '0', '2019-02-17 00:00:00', 'Ana Caro Ybrin', '', 'ayibrin11@hotmail.com', 'Jesus del Monte', 'Desconocido', 2),
+(108, 'Gustavo Sanchez', '0', '2019-02-17 00:00:00', 'Mari Sanchez', '', '', 'Lomas de Chapultepec', 'Desconocido', 2),
+(109, 'Betty Romano', '0', '2019-02-17 00:00:00', 'Betty Romano', '', '', '', 'Desconocido', 2),
+(110, 'Joseph Nager', '0', '2019-02-17 00:00:00', 'Yemy Nagar', '', '', '', 'Desconocido', 2),
+(111, 'Marusa Bobadilla', '0', '2019-02-17 00:00:00', 'Marusa Bobadilla', '', '', '', 'Desconocido', 2),
+(113, 'Diego Alcocer Sancliment', '0', '2019-02-17 00:00:00', 'Montse Sancliment', '', '', '', 'Desconocido', 2),
+(115, 'Lucas Ortega Arambari', '0', '2019-02-17 00:00:00', 'Rosario Ortega', '', 'ortegaparamo.rocio@gmail.com', '', 'Desconocido', 2),
+(116, 'Regina Reguero', '0', '2019-02-17 00:00:00', 'Regina Reguero', '', '', '', 'Desconocido', 2),
+(117, 'Gonzalo Avila', '0', '2019-02-17 00:00:00', 'Shiamara Avila', '', '', '', 'Desconocido', 2),
+(118, 'Pamela Arcos', '0', '2019-02-17 00:00:00', 'Pamela Arcos', '', 'pamemam@hotmail.es', '', 'Desconocido', 2),
+(119, 'Jose Ignacio del Valle', '0', '2019-02-17 00:00:00', 'Lupina del Valle', '', '', '', 'Desconocido', 2),
+(121, 'Rodrigo Tirado', '0', '2019-02-17 00:00:00', 'Morella Tirado', '', '', '', 'Desconocido', 2),
+(123, 'Mayela Rigada', '0', '2019-02-17 00:00:00', 'Mayela Rigada', '', '', 'Interlomas', 'Desconocido', 2),
+(124, 'Arturo Hoth', '0', '2019-02-17 00:00:00', 'Graziela Hoth', '', '', '', 'Desconocido', 2),
+(126, 'Aitana Ituarte', '0', '2019-02-17 00:00:00', 'Adita Ituarte', '', '', '', 'Desconocido', 2),
 (127, 'Juan Pablo Salomón', NULL, '2019-02-28 20:49:41', 'Cristina Salomón', '5536537849', NULL, 'Santa Fe', NULL, 2),
-(128, 'Juan Jorge Aguilar', NULL, '2019-02-28 20:49:08', 'Rossana Martí', '5576389461', NULL, 'Bosques de las Lomas', NULL, 2);
+(128, 'Juan Jorge Aguilar', NULL, '2019-02-28 20:49:08', 'Rossana Martí', '5576389461', NULL, 'Bosques de las Lomas', NULL, 2),
+(134, 'Ximena Aguilar', '', '2019-03-06 05:10:49', 'Rossana Martí', '5576389461', '', 'Bosques de las Lomas', '', 2),
+(135, 'Begoña Serna', '', '2019-03-06 05:11:58', 'Begoña Serna', '5541927767', 'begoserna@icloud.com', 'Bosques de las Lomas', '', 2),
+(136, 'Andrea Serna', '', '2019-03-06 05:12:48', 'Begoña Serna', '5541927767', 'begoserna@icloud.com', 'Bosques de las Lomas', '', 2),
+(137, 'Patricio Serna', '', '2019-03-06 05:13:54', 'Begoña Serna', '5541927767', 'begoserna@icloud.com', 'Bosques de las Lomas', '', 2),
+(138, 'Luisa Madrazo', '', '2019-03-06 05:17:42', 'Cecilia Peña', '5532320822', '', 'Bosques de las Lomas', '', 2),
+(139, 'Begoña Fernandez', '', '2019-03-06 05:19:42', 'Carina Flores', '5532238503', '', 'Bosques de las Lomas', '', 2),
+(140, 'Jimena Carrancedo', '', '2019-03-06 05:20:17', 'Verónica Carrancedo', '5554159265', '', 'Bosques de las Lomas', '', 2),
+(141, 'Paolo Levet', '', '2019-03-06 05:21:05', 'Luva Levet', '5525600010', 'llupa@gmail.com', 'Satélite', '', 2),
+(142, 'Luciano Levet', '', '2019-03-06 05:22:41', 'Luva Levet', '5525600010', 'llupa@gmail.com', 'Satélite', '', 2),
+(143, 'Mateo Muñoz Gómez', '', '2019-03-06 05:23:53', 'Nancy Gomez', '5543053150', '', 'Vistahermosa', '', 2),
+(144, 'Loretta Marron', '', '2019-03-06 05:24:39', 'Zuri Marrón', '5554549300', 'cocanazuri@aol.com', 'Lomas de Tecamachalco', '', 2),
+(145, 'Inés Alcocer Sancliment', '', '2019-03-06 05:25:06', 'Montse Sancliment', '', '', '', '', 2),
+(146, 'José Ortega Arambari', '', '2019-03-06 05:25:43', 'Rosario Ortega', '', 'ortegaparamo.rocio@gmail.com', '', '', 2),
+(147, 'Alex Galván', '', '2019-03-06 05:25:56', 'Alex Galván', '', '', '', '', 2),
+(148, 'Ignacio Díaz Ureta', '', '2019-03-06 05:26:16', 'María Paz Ureta Díaz', '', 'pepaureta@gmail.com', '', '', 2),
+(149, 'Ingrid Hinterholzer Alarcón', '', '2019-03-06 05:26:35', 'Karin Alarcon', '', '', '', '', 2);
 
 -- --------------------------------------------------------
 
@@ -180,7 +193,9 @@ INSERT INTO `asesor` (`idasesor`, `nombre`, `apellido_paterno`, `apellido_matern
 (10, 'Santiago', 'Ibarra', 'Bonilla', '4423780146', 'santi@gmail.com', 'Lomas de las Palmas, Lomas Anáhuac', 2, 3, 'e139c454239bfde741e893edb46a06cc'),
 (11, 'Roberto', 'Julio', 'Ibarra', '442639128', 'marimar@gmail.com', 'mansiones del valle', 440, 3, '7993e11204b215b27694b6f139e34ce8'),
 (12, 'Marimar planas', 'Planas', 'Rego', '5555029668', 'marimar.planas@brightbrains.org', 'Fuente De Paseo 39, Lomas De las Palmas', 403, 12, '31941c2a4d037e9e73791b7b4bd282d8'),
-(13, 'Cesar', 'Andrés', 'Julio', '554234167232', 'cesaremd@hotmail.com', 'Satélite, Mundo E 1627 Mansiones del valle México', 0, 2, '7993e11204b215b27694b6f139e34ce8');
+(13, 'Cesar', 'Andrés', 'Julio', '554234167232', 'cesaremd@hotmail.com', 'Satélite, Mundo E 1627 Mansiones del valle México', 0, 2, '7993e11204b215b27694b6f139e34ce8'),
+(14, 'RRV', 'KL', 'JJ', '8', 'rK@gmail.com', 'L', 0, 5, '7993e11204b215b27694b6f139e34ce8'),
+(15, 'wq', 'ad', 'ad', '2', '3der@gmail.com', 'de', 0, 12, '7993e11204b215b27694b6f139e34ce8');
 
 -- --------------------------------------------------------
 
@@ -233,7 +248,8 @@ INSERT INTO `categoria` (`idcategoria`, `nombre`, `descripcion`) VALUES
 (3, 'Secundaria', 'Niños entre 12-16 años'),
 (4, 'Preparatoria', NULL),
 (5, 'Universidad', NULL),
-(6, 'Kinder-Babies', NULL);
+(6, 'Kinder-Babies', NULL),
+(7, 'Otra', '');
 
 -- --------------------------------------------------------
 
@@ -608,7 +624,7 @@ CREATE TABLE `venta` (
   `idmateria` int(11) NOT NULL,
   `cantidad` int(11) NOT NULL,
   `Pago` int(20) NOT NULL,
-  `fecha_registro` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `fecha_registro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -735,68 +751,57 @@ ALTER TABLE `zona`
 -- AUTO_INCREMENT de la tabla `alumno`
 --
 ALTER TABLE `alumno`
-  MODIFY `idalumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
-
+  MODIFY `idalumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=150;
 --
 -- AUTO_INCREMENT de la tabla `asesor`
 --
 ALTER TABLE `asesor`
-  MODIFY `idasesor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
+  MODIFY `idasesor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT de la tabla `carrera`
 --
 ALTER TABLE `carrera`
   MODIFY `idcarrera` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
 --
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `idcategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
+  MODIFY `idcategoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de la tabla `clave`
 --
 ALTER TABLE `clave`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT de la tabla `countries`
 --
 ALTER TABLE `countries`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=250;
-
 --
 -- AUTO_INCREMENT de la tabla `materia`
 --
 ALTER TABLE `materia`
   MODIFY `idmateria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
 -- AUTO_INCREMENT de la tabla `paquete`
 --
 ALTER TABLE `paquete`
   MODIFY `idpaquete` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
 --
 -- AUTO_INCREMENT de la tabla `parentesco`
 --
 ALTER TABLE `parentesco`
   MODIFY `idparentesco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
 --
 -- AUTO_INCREMENT de la tabla `venta`
 --
 ALTER TABLE `venta`
   MODIFY `idventa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
-
 --
 -- AUTO_INCREMENT de la tabla `zona`
 --
 ALTER TABLE `zona`
   MODIFY `idzona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
 --
 -- Restricciones para tablas volcadas
 --
@@ -822,7 +827,6 @@ ALTER TABLE `venta`
   ADD CONSTRAINT `fk_venta_categoria1` FOREIGN KEY (`idcategoria`) REFERENCES `categoria` (`idcategoria`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_venta_materia1` FOREIGN KEY (`idmateria`) REFERENCES `materia` (`idmateria`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_venta_paquete1` FOREIGN KEY (`idpaquete`) REFERENCES `paquete` (`idpaquete`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -14,6 +14,10 @@ $errors = array();
 // connect to the database
 $db = mysqli_connect('localhost', 'id8502144_root', '254088Ma!', 'id8502144_mydb');
       mysqli_set_charset($db, 'utf8');
+ $query = "SELECT * FROM clave WHERE id=1";
+  $result = mysqli_query($db, $query);
+  $row = mysqli_fetch_array($result);
+  $clave_registro = $row['clave'];
 //Ver la conexión de la database.
 //if ($db->connect_error) {
 //   die("Connection failed: " . $db->connect_error);
@@ -49,7 +53,7 @@ if (isset($_POST['reg_asesor'])) {
   if ($password_1 != $password_2) {
 	array_push($errors, "No coincide el password");
   }
-  if ($clave != "IW32") {
+  if ($clave != $clave_registro) {
 	array_push($errors, "La clave de registro no es correcta");
   }
 

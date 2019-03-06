@@ -236,23 +236,27 @@ if (isset($_POST['asesor_editar'])) {
 }
 if (isset($_POST['alumno'])) {
     $email = $_SESSION['email'];
-    $query="select idasesor from asesor where email='$email'";
+    $query="select * from asesor where email='$email'";
     $result= mysqli_query($db, $query);
     $row=mysqli_fetch_array($result);
     $idasesor= $row['idasesor'];
     $nombre= mysqli_real_escape_string($db, $_POST['nombre_alumno']);
+    $edad="";
     $edad = mysqli_real_escape_string($db, $_POST['edad']);
     $nombre_responsable = mysqli_real_escape_string($db, $_POST['nombre_responsable']);
     $celular = mysqli_real_escape_string($db, $_POST['celular_responsable']);
     $correo = mysqli_real_escape_string($db, $_POST['correo_responsable']);
     $parentesco = mysqli_real_escape_string($db, $_POST['parentesco_responsable']);
     $direccion = mysqli_real_escape_string($db, $_POST['direccion']); 
-    $query = "Insert into alumno (nombre_alumno,edad,nombre_responsable,celular_responsable,correo_responsable,parentesco_responsable,direccion,idasesor) values('$nombre','$edad','$nombre_responsable','$celular','$correo','$parentesco','$direccion','$idasesor')";
+    $query = "Insert into alumno (nombre_alumno,edad,nombre_responsable,celular_responsable,correo_responsable,direccion,parentesco_responsable,idasesor) values('$nombre','$edad','$nombre_responsable','$celular','$correo','$direccion','$parentesco','$idasesor')";
   	$results = mysqli_query($db, $query);
         if($results){
       	  header('location: ../../index-admin.php#!/Alumno');}
     else{
                 echo "ERROR";
+        echo $idasesor;
+        echo $nombre;
+        echo $_SESSION['email'];
     }
 }
 if (isset($_GET['dalumno'])) {
@@ -309,6 +313,16 @@ if (isset($_POST['password_editar'])) {
     }
      }else{
         header('location: ../../index-admin.php#!/Falla');
+    }
+}
+if (isset($_POST['clave_editar'])) {
+    $clave = mysqli_real_escape_string($db, $_POST['clave']);
+    $query = "Update clave set clave='$clave' where id=1";
+  	$results = mysqli_query($db, $query);
+        if($results){
+      	  header('location: ../../index-admin.php#!/Clave');}
+    else{
+                echo "ERROR";
     }
 }
 ?>

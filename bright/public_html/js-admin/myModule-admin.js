@@ -54,6 +54,10 @@ app.config(function($routeProvider){
 				templateUrl:"partials-admin/CRUD/password/password.php",
 				controller:"cambioCtrl"
 		})
+        .when("/Clave", {
+				templateUrl:"partials-admin/CRUD/clave/clave.php",
+				controller:"cambioCtrl"
+		})
         .when("/Asesor-editar", {
 				templateUrl:"partials-admin/CRUD/maestro/asesor-editar.php",
 				controller:"cambioCtrl"
